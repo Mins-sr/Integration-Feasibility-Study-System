@@ -103,21 +103,21 @@
   - _Requirements: 2, 4_
 
 ### 5. Analysis Domain - Security Analyzer
-- [ ] 5.1 (P) Build OWASP ZAP integration bridge
+- [x] 5.1 (P) Build OWASP ZAP integration bridge
   - API エンドポイント（`/JSON/core/view/version/`）経由で ZAP が実行中か検証
   - HTTP リクエスト使用で ZAP API クライアントを作成（zapv2 ライブラリまたは直接HTTP呼び出し）
   - パッシブ（非侵入型）とアクティブ（侵入型）両方のスキャンモードをサポート
   - ZAP スキャン結果を VulnerabilityReport 形式に解析
   - _Requirements: 3_
 
-- [ ] 5.2 (P) Implement security checks and compliance validation
+- [x] 5.2 (P) Implement security checks and compliance validation
   - TLS バージョンを検出（TLS 1.2以上を要求）
   - API レスポンスから認証方法を抽出
   - 転送中と保存時のデータ用の暗号化アルゴリズムを特定
   - 検出された設定に対してコンプライアンス要件（GDPR、PCI-DSS、HIPAA）を検証
   - _Requirements: 3_
 
-- [ ] 5.3 (P) Create vulnerability report generator
+- [x] 5.3 (P) Create vulnerability report generator
   - 重要度別に脆弱性を分類（Critical、High、Medium、Low、Info）
   - 脆弱性を OWASP Top 10 カテゴリにマッピング
   - 各脆弱性に誤検知リスク評価を割り当て
