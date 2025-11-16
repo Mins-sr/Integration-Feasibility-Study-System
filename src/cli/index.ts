@@ -60,13 +60,17 @@ program
   )
   .action(async (options) => {
     try {
-      console.log('Executing study run...');
-      console.log('Target:', options.target);
-      console.log('Config:', options.config);
-      console.log('Load test:', options.enableLoadTest);
+      // Import dynamically to avoid circular dependencies
+      const { executeStudyWorkflow } = await import('./workflows/study-run');
 
-      // TODO: Call PipelineOrchestratorService.executeStudy(config)
-      throw new Error('Not implemented yet - implementation pending in task 8.2');
+      await executeStudyWorkflow({
+        targetUrl: options.target,
+        configPath: options.config,
+        enableLoadTest: options.enableLoadTest ?? false,
+      });
+
+      console.log('Study completed successfully');
+      process.exit(0);
     } catch (error) {
       handleError(error);
     }
@@ -84,11 +88,15 @@ program
   .requiredOption('--checkpoint <id>', 'Checkpoint ID to resume from (UUID)')
   .action(async (options) => {
     try {
-      console.log('Resuming study...');
-      console.log('Checkpoint:', options.checkpoint);
+      // Import dynamically to avoid circular dependencies
+      const { resumeStudyWorkflow } = await import('./workflows/study-resume');
 
-      // TODO: Call PipelineOrchestratorService.resumeStudy(checkpointId)
-      throw new Error('Not implemented yet - implementation pending in task 8.3');
+      await resumeStudyWorkflow({
+        checkpointId: options.checkpoint,
+      });
+
+      console.log('Study resumed and completed successfully');
+      process.exit(0);
     } catch (error) {
       handleError(error);
     }

@@ -29,6 +29,7 @@
   "devDependencies": {
     "@types/axios-mock-adapter": "^1.9.0",
     "@types/node": "^20.17.10",
+    "@types/semver": "^7.7.1",
     "@vitest/coverage-v8": "^1.6.1",
     "axios-mock-adapter": "^2.1.0",
     "typescript": "^5.7.2",
@@ -36,6 +37,8 @@
   },
   "dependencies": {
     "axios": "^1.7.9",
-    "commander": "^12.1.0"
+    "commander": "^12.1.0",
+    "semver": "^7.7.3",
+    "yaml": "^2.8.1"
   }
 }

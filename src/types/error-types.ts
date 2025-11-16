@@ -9,8 +9,11 @@
  */
 export type StudyError =
   | { type: 'CONFIG_INVALID'; message: string; field: string }
+  | { type: 'CONFIG_NOT_FOUND'; message: string }
   | { type: 'ANALYZER_FAILED'; analyzer: string; cause: Error }
-  | { type: 'REPORT_GENERATION_FAILED'; cause: Error };
+  | { type: 'REPORT_GENERATION_FAILED'; cause: Error }
+  | { type: 'CHECKPOINT_NOT_FOUND'; message: string }
+  | { type: 'CHECKPOINT_INVALID'; message: string };
 
 /**
  * HTTP Client Errors

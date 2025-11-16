@@ -5,10 +5,11 @@
  */
 
 // Result Type and Helpers
-export { Result, ok, err, isOk, isErr } from './result';
+export type { Result } from './result';
+export { ok, err, isOk, isErr } from './result';
 
 // Domain Entities
-export {
+export type {
   Study,
   AnalyzerResult,
   Report,
@@ -19,7 +20,7 @@ export {
 } from './domain-entities';
 
 // Configuration Types
-export {
+export type {
   StudyConfig,
   TargetConfig,
   AnalyzerConfig,
@@ -36,7 +37,7 @@ export {
 } from './config-types';
 
 // Error Types
-export {
+export type {
   StudyError,
   HttpError,
   TestError,
